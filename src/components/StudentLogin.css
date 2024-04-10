@@ -1,0 +1,42 @@
+/* Estilizando o container da imagem */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 155px; /* Altura da tela inteira */
+}
+
+.vazio {
+  height: 430px; /* Altura da tela inteira */
+}
+
+.input-group {
+  width: 30% !important
+}
+
+.student-login-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilizando a imagem */
+.banner-img {
+  max-width: 100%; /* Garante que a imagem não ultrapasse a largura do container */
+  max-height: 100%; /* Garante que a imagem não ultrapasse a altura do container */
+  height: auto;
+  width: auto;
+}
+
+.img-bottom-right {
+  position: fixed; /* Posição fixa em relação à tela */
+  bottom: 0; /* Distância do lado inferior da tela */
+  right: 0; /* Distância do lado direito da tela */
+  margin-bottom: 20px; /* Espaçamento opcional para evitar sobreposição com a borda */
+  margin-right: 20px; /* Espaçamento opcional para evitar sobreposição com a borda */
+}
+
+/* Estilizando o corpo da página */
+body {
+  margin: 0; /* Remove margens padrão do corpo da página */
+}
