@@ -1,10 +1,10 @@
-import './StudentLogin.css'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+import './TeacherLogin.css'
 import Image from 'react-bootstrap/Image';
 import axios from "axios";
 import React from 'react';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
 
 function TeacherLogin() {
   const [Teacher, setTeacher] = React.useState(null)
@@ -25,32 +25,40 @@ function TeacherLogin() {
 
   return (
     <>
-      <div className="vazio"></div>
-      <div className="container">
-        <img src="/FeedNac.png" className="banner-img" alt="Imagem feednac" />
-      </div>
-      <div className="professor-login-input">
-        <InputGroup className='input-group'>
-          <Form.Control
-            placeholder="Matrícula do Professor"
-            aria-label="Matrícula do professor"
-          />
-          <Form.Control
-            type="password"
-            placeholder="Senha"
-            aria-label="Senha"
-          />
-          <Button variant="outline-secondary" id="login">
-            Logar
-          </Button>
-        </InputGroup>
-      </div>
-      <div className='img-bottom-right'>
-        <Image src="senac_logo_new.png" />
-      </div>
-    </>
+      <div className="vazio"></div>
+      <div className="container">
+        <img src="/FeedNac.png" className="banner-img" alt="Imagem feednac" />
+      </div>
+      <Form method="POST" onSubmit={validarLogin} className='professor-login'>
+        <Form.Group method as={Row} className="mb-3" controlId="formPlaintextEmail">
+          <Form.Label column sm="2">
+            Username
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control type="text" placeholder="Username" />
+          </Col>
+        </Form.Group>
+
+        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+          <Form.Label column sm="2">
+            Password
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control type="password" placeholder="Password" />
+          </Col>
+        </Form.Group>
+        <button type="submit"> Login </button>
+      </Form>
+      <div className='img-bottom-right'>
+        <Image src="senac_logo_new.png" />
+      </div>
+    </>
   );
-  
+}
+
+function validarLogin() {
+  // enviar para api o usuario e senhad\(base64)
+  console.log("valida login")
 }
 
 export default TeacherLogin

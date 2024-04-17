@@ -1,23 +1,27 @@
-function Home(){
+import Image from 'react-bootstrap/Image';
+import './Home.css';
+import { Link } from "react-router-dom";
 
-    return (
-        <>
-          <div className="vazio"></div>
-          <div className="container">
-            <img src="/FeedNac.png" className="banner-img" alt="Imagem feednac" />
-          </div>
-          <div className="button-container">
-            <Button variant="outline-secondary" id="student-login-button">
-              Sou aluno
-            </Button>
-            <Button variant="outline-secondary" id="professor-login-button">
-              Sou professor
-            </Button>
-          </div>
-          <div className='img-bottom-right'>
-            <Image src="senac_logo_new.png" />
-          </div>
-        </>
-      );
-      
+function Home() {
+  return (
+    <>
+      <div className="vazio"></div>
+      <div className="container">
+        <img src="/FeedNac.png" className="banner-img" alt="Imagem feednac" />
+      </div>
+      <div className="button-container">
+        <Link to={`student`}>
+          <button> Sou aluno</button>
+        </Link>
+        <Link to={`teacher`}>
+          <button> Sou professor</button>
+        </Link>
+      </div>
+      <div className='img-bottom-right'>
+        <Image src="senac_logo_new.png" />
+      </div>
+    </>
+  );
 }
+
+export default Home

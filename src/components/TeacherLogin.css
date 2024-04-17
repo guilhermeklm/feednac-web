@@ -3,14 +3,13 @@
     text-align: center;
 }
   .vazio {
-    height: 430px; /* Altura da tela inteira */
+    height: 230px; /* Altura da tela inteira */
   }
   
-  .professor-login-input {
+  .professor-login {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px; /* Espaçamento entre o banner e os campos de entrada */
   }
   
   .input-group {
