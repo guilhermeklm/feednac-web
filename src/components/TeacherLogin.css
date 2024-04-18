@@ -12,10 +12,6 @@
     align-items: center;
   }
   
-  .input-group {
-    margin-bottom: 10px; /* Espaçamento entre os campos de entrada */
-  }
-  
   /* Estilizando a imagem */
   .banner-img {
     max-width: 100%; /* Garante que a imagem não ultrapasse a largura do container */
@@ -35,8 +31,4 @@
   /* Estilizando o corpo da página */
   body {
     margin: 0; /* Remove margens padrão do corpo da página */
-  }
-
-  #login {
-    margin-top: 10px; /* Espaçamento entre o último campo de entrada e o botão */
   }

@@ -3,18 +3,12 @@
   text-align: center;
 }
 .vazio {
-  height: 430px; /* Altura da tela inteira */
+  height: 230px; /* Altura da tela inteira */
 }
 
-.professor-login-input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px; /* Espaçamento entre o banner e os campos de entrada */
-}
-
-.input-group {
-  margin-bottom: 10px; /* Espaçamento entre os campos de entrada */
+.bottom-position {
+  text-align: center;
+  margin-bottom: 1px;
 }
 
 /* Estilizando a imagem */
@@ -36,8 +30,4 @@
 /* Estilizando o corpo da página */
 body {
   margin: 0; /* Remove margens padrão do corpo da página */
-}
-
-#login {
-  margin-top: 10px; /* Espaçamento entre o último campo de entrada e o botão */
 }

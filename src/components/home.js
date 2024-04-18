@@ -1,6 +1,21 @@
 import Image from 'react-bootstrap/Image';
 import './Home.css';
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+
+const styles = {
+  buttonContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center', // Centraliza os botões horizontalmente
+    justifyContent: 'center', // Centraliza os botões verticalmente
+  },
+  button: {
+    width: '340px', // Os botões ocuparão 100% da largura do contêiner pai
+    height: '50px', // Altura fixa dos botões (você pode ajustar conforme necessário)
+    marginBottom: '1px'
+  },
+};
 
 function Home() {
   return (
@@ -9,12 +24,12 @@ function Home() {
       <div className="container">
         <img src="/FeedNac.png" className="banner-img" alt="Imagem feednac" />
       </div>
-      <div className="button-container">
-        <Link to={`student`}>
-          <button> Sou aluno</button>
-        </Link>
+      <div style={styles.buttonContainer}>
         <Link to={`teacher`}>
-          <button> Sou professor</button>
+          <Button style={styles.button} variant="dark"> Sou professor </Button>
+        </Link>
+        <Link to={`student`}>
+          <Button style={styles.button} variant="dark"> Sou aluno </Button>
         </Link>
       </div>
       <div className='img-bottom-right'>
