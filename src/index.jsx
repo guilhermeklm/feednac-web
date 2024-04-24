@@ -9,6 +9,7 @@ import {
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import StudentLogin from "./components/StudentLogin";
+import StudentHome from "./components/StudentHome";
 import TeacherLogin from "./components/TeacherLogin";
 import TeacherHome from "./components/TeacherHome";
 
@@ -19,15 +20,19 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "student",
+    path: "/student",
     element: <StudentLogin />,
   },
   {
-    path: "teacher",
+    path: "/student/:id",
+    element: <StudentHome />,
+  },
+  {
+    path: "/teacher",
     element: < TeacherLogin />
   },
   {
-    path: "teacher/:id",
+    path: "/teacher/:id",
     element: <TeacherHome />
   }
 ]);
