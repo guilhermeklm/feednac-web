@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import Home from "./components/Home"
+import Home from "./pages/Home"
 import ErrorPage from "./error-page";
 import {
   createBrowserRouter,
@@ -8,10 +8,10 @@ import {
 } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import StudentLogin from "./components/StudentLogin";
-import StudentHome from "./components/StudentHome";
-import TeacherLogin from "./components/TeacherLogin";
-import TeacherHome from "./components/TeacherHome";
+import StudentLogin from "./pages/StudentLogin";
+import StudentHome from "./pages/StudentHome";
+import TeacherLogin from "./pages/TeacherLogin";
+import TeacherHome from "./pages/TeacherHome";
 
 const router = createBrowserRouter([
   {

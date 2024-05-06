@@ -27,8 +27,11 @@ export default class StudentLogin extends Component {
     e.preventDefault();
     const matricula = e.target[0].value
 
-    axios.get(`http://localhost:8080/login/student/${matricula}`)
+    const url = `${process.env.REACT_APP_FEEDNAC_API}/login/student/${matricula}`
+    
+    axios.get(url)
       .then(async (response) => {
+        console.log(response)
         const user = JSON.parse(JSON.stringify(response.data.body))
         this.setState({user})
       })

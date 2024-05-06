@@ -29,7 +29,9 @@ export default class TeacherLogin extends Component {
     const username = e.target[0].value
     const password = e.target[1].value
 
-    axios.post(`http://localhost:8080/login/teacher`, {
+    const url = `${process.env.REACT_APP_FEEDNAC_API}/login/teacher`
+
+    axios.post(url, {
       username: username,
       passwordEncrypted: btoa(password) 
     })
@@ -71,7 +73,7 @@ export default class TeacherLogin extends Component {
           <Button variant="dark" type="submit"> Login </Button>
         </Form>
         {this.state.user &&
-            <Navigate to={`/teacher/${this.state.user.teacherId}`}
+            <Navigate to={`/teacher/${this.state.user.id}`}
               state={{ user: this.state.user }} />
           }
         <div className='img-bottom-right'>
