@@ -1,8 +1,11 @@
+import WeeklySchedule from "../components/WeeklySchedule"
+
 function StudentHome() {
   return (
-    <>
-      <h1>Tela inicial do aluno</h1>
-    </>
+    <div className="App">
+      <h1>Meu Cronograma Semanal</h1>
+      <WeeklySchedule/>
+    </div>
   )
 }
 

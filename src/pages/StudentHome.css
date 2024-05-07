@@ -1,9 +1,8 @@
-function StudentHome() {
-  return (
-    <>
-      <h1>Tela inicial do aluno</h1>
-    </>
-  )
+.App {
+  display: flex;
+  flex-direction: column; /* Define a direção da flexbox como coluna */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
 }
-
-export default StudentHome
