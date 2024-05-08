@@ -6,7 +6,8 @@ import { Component } from 'react';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { Navigate } from "react-router-dom";
+import { Navigate, Route } from "react-router-dom";
+import StudentHome from './StudentHome';
 
 export default class StudentLogin extends Component {
 
@@ -28,15 +29,16 @@ export default class StudentLogin extends Component {
     const matricula = e.target[0].value
 
     const url = `${process.env.REACT_APP_FEEDNAC_API}/login/student/${matricula}`
-    
+
     axios.get(url)
       .then(async (response) => {
         console.log(response)
         const user = JSON.parse(JSON.stringify(response.data.body))
-        this.setState({user})
+        console.log(user)
+        this.setState({ user })
       })
       .catch(error => {
-        this.setState({error})
+        this.setState({ error })
       })
   }
 
@@ -61,9 +63,11 @@ export default class StudentLogin extends Component {
             <Button variant="dark" type="submit"> Login </Button>
           </Form>
           {this.state.user &&
-            <Navigate to={`/student/${this.state.user.id}`}
-              state={{ user: this.state.user }} />
-          }
+            <Route
+              exact path={`/student/${this.state.user.id}`}
+              component={StudentHome}
+              render={() => <StudentHome user={this.state.user} />}
+            />}
         </div>
         <div className='img-bottom-right'>
           <Image src="senac_logo_new.png" />

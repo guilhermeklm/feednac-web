@@ -1,5 +1,5 @@
-run-local:
-	@npm run start-local
+run-dese:
+	@npm run start-dese
 
 run-prod:
 	@npm run start-prod
