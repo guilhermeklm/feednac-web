@@ -41,7 +41,7 @@ tr:first-child td {
 tr {
   transition: background-color 0.3s;
 }
-.avaliar-btn {
+.avaliacao-btn {
   background-color: #000000; /* Verde */
   border: none;
   color: white;
@@ -56,6 +56,6 @@ tr {
   border-radius: 4px;
 }
 
-.avaliar-btn:hover {
+.avaliacao-btn:hover {
   background-color: #394139; /* Verde mais escuro quando hover */
 }
