@@ -55,7 +55,9 @@ export default class StudentLogin extends Component {
             <Navigate to={`/student/${this.state.user.id}`} state={{user: this.state.user}} />}
         </div>
         <div className='img-bottom-right'>
-          <Image src="senac_logo_new.png" />
+          <a href='/'>
+            <Image src="senac_logo_new.png" />
+          </a>
         </div>
       </>
     )
