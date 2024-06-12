@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './WeeklySchedule.css'
+import './WeeklySchedule.css';
+import { Link } from 'react-router-dom';
 
 export default function StudentWeeklySchedule({ studentId }) {
-
   const [dailySchedules, setDailySchedules] = useState([]);
 
   useEffect(() => {
-    const url = `${process.env.REACT_APP_FEEDNAC_API}/student/${studentId}/dailySchedules`
+    const url = `${process.env.REACT_APP_FEEDNAC_API}/student/${studentId}/dailySchedules`;
 
     axios.get(url)
       .then(async (response) => {
-        const dailySchedules = JSON.parse(JSON.stringify(response.data.body))
-        setDailySchedules(dailySchedules)
-      })
-  }, [studentId])
+        const dailySchedules = JSON.parse(JSON.stringify(response.data.body));
+        setDailySchedules(dailySchedules);
+      });
+  }, [studentId]);
 
   return (
     <div>
@@ -28,7 +28,7 @@ export default function StudentWeeklySchedule({ studentId }) {
               <th>Horário</th>
               <th>Sala</th>
               <th>Turma</th>
-              <th/>
+              <th />
             </tr>
           </thead>
           <tbody>
@@ -40,8 +40,19 @@ export default function StudentWeeklySchedule({ studentId }) {
                 <td>{item.dailySchedule.courseSession.startTime} - {item.dailySchedule.courseSession.endTime}</td>
                 <td>{item.dailySchedule.courseSession.classRoom}</td>
                 <td>{item.dailySchedule.courseSession.className}</td>
-                {/* add evento para avaliar aula */}
-                <td><button className="avaliacao-btn">Avaliar Aula</button></td>
+                <td>
+                  <Link
+                    to={{
+                      pathname: '/classEvaluation',
+                      state: {
+                        studentId: studentId,
+                        courseSessionId: item.dailySchedule.courseSession.id
+                      }
+                    }}
+                  >
+                    <button className="avaliacao-btn">Avaliar Aula</button>
+                </Link>
+                </td>
               </tr>
             ))}
           </tbody>
