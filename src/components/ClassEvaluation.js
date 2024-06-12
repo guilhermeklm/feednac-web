@@ -28,7 +28,7 @@ export default function ClassEvaluation() {
   }, [studentId, courseSessionId]);
 
   return (
-    <div className="container">
+    <div className="avaliação">
       <h1>Avaliação da Aula</h1>
 
       <form >
