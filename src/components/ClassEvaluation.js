@@ -11,7 +11,7 @@ export default function ClassEvaluation() {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/questions');
+        const response = await axios.get(`${process.env.REACT_APP_FEEDNAC_API}/questions`);
         console.log('Perguntas recebidas:', response.data.body.questions);
         setQuestions(response.data.body.questions);
       } catch (error) {
