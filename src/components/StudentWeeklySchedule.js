@@ -44,10 +44,10 @@ export default function StudentWeeklySchedule({ studentId }) {
                   <Link
                     to={{
                       pathname: '/classEvaluation',
-                      state: {
-                        studentId: studentId,
-                        courseSessionId: item.dailySchedule.courseSession.id
-                      }
+                    }}
+                    state={{
+                      studentId: studentId,
+                      courseSessionId: item.dailySchedule.courseSession.id
                     }}
                   >
                     <button className="avaliacao-btn">Avaliar Aula</button>

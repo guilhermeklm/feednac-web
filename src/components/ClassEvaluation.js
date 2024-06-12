@@ -5,14 +5,14 @@ import './ClassEvaluation.css';
 
 export default function ClassEvaluation() {
   const location = useLocation();
-  const { studentId, courseSessionId } = location.state || {};
+  const state = location.state || {};
+  // state.studentId e state.courseSessionId
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_FEEDNAC_API}/questions`);
-        console.log('Perguntas recebidas:', response.data.body.questions);
         setQuestions(response.data.body.questions);
       } catch (error) {
         console.error('Erro ao buscar perguntas:', error);
@@ -21,11 +21,6 @@ export default function ClassEvaluation() {
 
     fetchQuestions();
   }, []);
-
-  useEffect(() => {
-    console.log('ID do Aluno:', studentId);
-    console.log('ID da Aula:', courseSessionId);
-  }, [studentId, courseSessionId]);
 
   return (
     <div className="avaliação">
