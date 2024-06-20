@@ -6,6 +6,7 @@ import TeacherLogin from "./pages/TeacherLogin";
 import TeacherHome from "./pages/TeacherHome";
 import StudentWeeklySchedule from "./components/StudentWeeklySchedule";
 import ClassEvaluation from "./components/ClassEvaluation";
+import TeacherFeedback from "./pages/TeacherFeedback";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/teacher/:id" element={<TeacherHome />} />
         <Route path="/" element={<StudentWeeklySchedule  />} />
         <Route path="/classEvaluation" element={<ClassEvaluation />} />
+        <Route path="/showFeedbacks" element={<TeacherFeedback />} />
       </Routes>
     </div>
   );
