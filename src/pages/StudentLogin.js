@@ -50,7 +50,9 @@ export default class StudentLogin extends Component {
               </Col>
             </Form.Group>
             {this.state.error != null && <p className='error-message'> {this.state.error.response.data.messages} </p>}
+            
             <Button variant="dark" type="submit"> Login </Button>
+            <a href='/'><Button variant="dark"> Voltar </Button></a>
           </Form>
           {this.state.user &&
             <Navigate to={`/student/${this.state.user.id}`} state={{user: this.state.user}} />}

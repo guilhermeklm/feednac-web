@@ -71,6 +71,7 @@ export default class TeacherLogin extends Component {
           </Form.Group>
           {this.state.error != null && <p className='error-message'> {this.state.error.response.data.messages} </p>}
           <Button variant="dark" type="submit"> Login </Button>
+          <a href='/'><Button variant="dark"> Voltar </Button></a>
         </Form>
         {this.state.user &&
             <Navigate to={`/teacher/${this.state.user.id}`}
