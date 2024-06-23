@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './WeeklySchedule.css'
+import { Link } from 'react-router-dom';
 
 export default function TeacherWeeklySchedule({ teacherId }) {
 
@@ -27,7 +28,7 @@ export default function TeacherWeeklySchedule({ teacherId }) {
               <th>Horário</th>
               <th>Sala</th>
               <th>Turma</th>
-              <th/>
+              <th />
             </tr>
           </thead>
           <tbody>
@@ -38,8 +39,20 @@ export default function TeacherWeeklySchedule({ teacherId }) {
                 <td>{dailySchedule.courseSession.startTime} - {dailySchedule.courseSession.endTime}</td>
                 <td>{dailySchedule.courseSession.classRoom}</td>
                 <td>{dailySchedule.courseSession.className}</td>
-                {/* add evento para ver avaliacoes */}
-                <td><button className="avaliacao-btn">Ver avaliações</button></td>
+                <td>
+                  <Link
+                    to={{
+                      pathname: '/showFeedbacks',
+                    }}
+                    state={{
+                      teacherId: teacherId,
+                      courseSessionId: dailySchedule.courseSession.id
+                    }}
+                  >
+                    <button className="avaliacao-btn">Ver avaliações</button>
+                  </Link>
+                </td>
+
               </tr>
             ))}
           </tbody>
