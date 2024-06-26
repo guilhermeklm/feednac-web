@@ -13,7 +13,7 @@ const styles = {
   button: {
     width: '340px', // Os botões ocuparão 100% da largura do contêiner pai
     height: '50px', // Altura fixa dos botões (você pode ajustar conforme necessário)
-    marginBottom: '1px'
+    marginBottom: '7px'
   },
 };
 

@@ -1,4 +1,5 @@
-.App {
+.Cronograma {
+  text-align: center;
   display: flex;
   flex-direction: column; /* Define a direção da flexbox como coluna */
   justify-content: center;
