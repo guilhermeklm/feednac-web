@@ -44,3 +44,13 @@
 body {
   margin: 0; /* Remove margens padrão do corpo da página */
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Espaço entre os botões */
+}
+
+.button-space {
+  margin-top: 10px; /* Adiciona espaço vertical entre os botões */
+}

@@ -106,7 +106,28 @@ form {
 }
 
 .submit button:hover {
-  background-color: #0056b3;
+  background-color: #6b0000;
+}
+
+.return {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.return button {
+  padding: 12px 24px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.return button:hover {
+  background-color: #7c2929;
 }
 
 @media (max-width: 768px) {

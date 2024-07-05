@@ -60,6 +60,10 @@ export default function ClassEvaluation() {
     });
   };
 
+  const handleBackButton = () => {
+    navigate(-1); // Navega para a página anterior
+  };
+
   return (
     <div className="evaluation">
       <h1>Avaliação da Aula</h1>
@@ -109,8 +113,9 @@ export default function ClassEvaluation() {
           />
         </div>
         <div className="submit">
-          <button type="submit">Enviar Avaliação</button>
+          <button type="submit">Enviar Avaliação</button><></>
         </div>
+        <div className="return"><button type="return" onClick={handleBackButton}>Voltar</button></div>
       </form>
     </div>
   );
