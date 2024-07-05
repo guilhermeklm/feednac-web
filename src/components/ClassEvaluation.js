@@ -15,7 +15,7 @@ export default function ClassEvaluation() {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/questions');
+        const response = await axios.get(`${process.env.REACT_APP_FEEDNAC_API}/questions`);
         console.log('Perguntas recebidas:', response.data.body.questions);
         setQuestions(response.data.body.questions);
       } catch (error) {
@@ -42,12 +42,10 @@ export default function ClassEvaluation() {
     };
 
     try {
-      const feedbackUrl = process.env.NODE_ENV === 'production'
-        ? 'http://ec2-34-232-118-254.compute-1.amazonaws.com:8080/feedbacks'
-        : 'http://localhost:8080/feedbacks';
+      const feedbackUrl = `${process.env.REACT_APP_FEEDNAC_API}/feedbacks`
         
       await axios.post(feedbackUrl, feedbackData);
-      navigate('/studentWeeklySchedule', { state: { studentId } });
+      navigate(`/student/${studentId}`, { state: { studentId } });
     } catch (error) {
       console.error('Erro ao enviar avaliação:', error);
     }
