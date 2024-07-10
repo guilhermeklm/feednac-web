@@ -9,7 +9,7 @@ export default function TeacherFeedback() {
   const location = useLocation();
   const navigate = useNavigate();
   const state = location.state || {};
-  const courseSessionName = state.courseSessionName
+  const courseSessionName = state.courseSessionName;
   const [questionAnswerCounts, setQuestionAnswerCounts] = useState([]);
   const [comments, setComments] = useState([]);
   const [feedbackList, setFeedbackList] = useState([]);
@@ -20,9 +20,9 @@ export default function TeacherFeedback() {
       try {
         const response = await axios.get(`${process.env.REACT_APP_FEEDNAC_API}/feedbacks?teacherId=${state.teacherId}&courseSessionId=${state.courseSessionId}`);
         setFeedbackList(response.data.body.feedbacks);
-        console.log("Data fetched");
+        console.log("Dados obtidos");
       } catch (error) {
-        console.error('Error fetching feedbacks:', error);
+        console.error('Erro ao buscar feedbacks:', error);
       }
     };
 
@@ -76,7 +76,7 @@ export default function TeacherFeedback() {
   };
 
   const generatePieChartData = (questionData) => {
-    const data = [["Answer", "Count"]];
+    const data = [["Resposta", "Quantidade"]];
     questionData.options.forEach(option => {
       data.push([option.answer, option.count]);
     });
@@ -86,15 +86,23 @@ export default function TeacherFeedback() {
   return (
     <div className="App">
       <h1>{courseSessionName}</h1>
-      <ListGroup numbered>
-        <h3>Comentarios: </h3>
-        {comments.map((comment, index) => (
-          <ListGroup.Item key={index}>{comment}</ListGroup.Item>
-        ))}
-      </ListGroup>
+      {comments.length > 0 ? (
+        <ListGroup numbered>
+          <h3>Comentários: </h3>
+          {comments.map((comment, index) => (
+            <ListGroup.Item key={index}>{comment}</ListGroup.Item>
+          ))}
+        </ListGroup>
+      ) : (
+        <p>Nenhum feedback disponível.</p>
+      )}
       <hr />
-      <h3> Média de nota: {generalNotesAverage}</h3>
-      <hr />
+      {feedbackList.length > 0 && (
+        <>
+          <h3>Média de nota: {generalNotesAverage}</h3>
+          <hr />
+        </>
+      )}
       {questionAnswerCounts.map((questionData, index) => (
         <div key={index}>
           <Chart
@@ -107,7 +115,7 @@ export default function TeacherFeedback() {
         </div>
       ))}
       <div className="return">
-        <button type="button" onClick={handleBackButton} style={{ marginTop: '20px' }}>Voltar</button>
+        <button type="button" onClick={handleBackButton} >Voltar</button>
       </div>
     </div>
   );
