@@ -17,7 +17,7 @@ export default function StudentWeeklySchedule({ studentId }) {
   }, [studentId]);
 
   return (
-    <div>
+    <div className='app'>
       {dailySchedules.length > 0 ? (
         <table>
           <thead>

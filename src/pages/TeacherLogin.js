@@ -68,13 +68,14 @@ export default class TeacherLogin extends Component {
             <Button variant="dark" href="/">Voltar</Button>
             <Button variant="dark" type="submit">Login</Button>
           </div>
-        </Form>
-        {this.state.user && <Navigate to={`/teacher/${this.state.user.id}`} state={{ user: this.state.user }} />}
-        <div className="img-bottom-right">
-          <a href="/">
+          <div>
+          <a>
             <Image src="senac_logo_new.png" />
           </a>
         </div>
+        </Form>
+        {this.state.user && <Navigate to={`/teacher/${this.state.user.id}`} state={{ user: this.state.user }} />}
+       
       </>
     );
   }

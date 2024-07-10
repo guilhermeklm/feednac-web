@@ -38,6 +38,8 @@
   right: 0; /* Distância do lado direito da tela */
   margin-bottom: 20px; /* Espaçamento opcional para evitar sobreposição com a borda */
   margin-right: 20px; /* Espaçamento opcional para evitar sobreposição com a borda */
+  max-width: 100%;
+  height: auto;
 }
 
 /* Estilizando o corpo da página */

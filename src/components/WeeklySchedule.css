@@ -1,8 +1,11 @@
+.container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+}
 
 table {
-  width: 90%;
-  max-width: 1500px;
-  margin: 20px auto;
+  width: 100%;
   border-collapse: collapse;
   border-radius: 8px;
   overflow: hidden;
@@ -11,6 +14,9 @@ table {
 
 th, td {
   padding: 12px 16px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
 }
 
 th {
@@ -26,23 +32,8 @@ tr:hover {
   background-color: #ddd;
 }
 
-td {
-  border-bottom: 1px solid #ddd;
-}
-
-
-
-/* Remove borda superior da primeira linha */
-tr:first-child td {
-  border-top: none;
-}
-
-/* Adiciona efeito de transição suave */
-tr {
-  transition: background-color 0.3s;
-}
 .avaliacao-btn {
-  background-color: #000000; /* Verde */
+  background-color: #000000;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -57,5 +48,62 @@ tr {
 }
 
 .avaliacao-btn:hover {
-  background-color: #394139; /* Verde mais escuro quando hover */
+  background-color: #394139;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  /* Estilos para telas menores que 768px de largura */
+  .container {
+    margin: 10px 0;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th, td {
+    padding: 8px 12px;
+  }
+
+  .avaliacao-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Estilos para telas menores que 480px de largura */
+  table {
+    display: block;
+    width: 100%;
+  }
+
+  thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  tr {
+    margin-bottom: 15px;
+  }
+
+  th {
+    text-align: right;
+  }
+
+  td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
 }
