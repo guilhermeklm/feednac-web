@@ -1,13 +1,15 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { PieChart } from '@mui/x-charts/PieChart';
 import './TeacherFeedback.css';
+import { Chart } from "react-google-charts";
+import ListGroup from 'react-bootstrap/ListGroup';
 
 export default function TeacherFeedback() {
   const location = useLocation();
   const navigate = useNavigate();
   const state = location.state || {};
+  const courseSessionName = state.courseSessionName
   const [questionAnswerCounts, setQuestionAnswerCounts] = useState([]);
   const [comments, setComments] = useState([]);
   const [feedbackList, setFeedbackList] = useState([]);
@@ -34,7 +36,7 @@ export default function TeacherFeedback() {
 
     feedbackList.forEach(feedback => {
       updatedComments.push(feedback.additionalComment);
-      newGeneralNotesAverage = newGeneralNotesAverage + feedback.generalNote
+      newGeneralNotesAverage += feedback.generalNote;
       feedback.answeredQuestions.forEach(answeredQuestion => {
         const { question: questionText, answer: answerText } = answeredQuestion;
 
@@ -69,50 +71,44 @@ export default function TeacherFeedback() {
 
   }, [feedbackList]);
 
-  const pieChartData = questionAnswerCounts.map((questionData, index) => ({
-    id: index,
-    data: questionData.options.map((option, optionIndex) => ({
-      id: optionIndex,
-      value: option.count,
-      label: option.answer,
-    })),
-  }));
-
   const handleBackButton = () => {
-    navigate(-1); // Navega para a página anterior
+    navigate(-1);
+  };
+
+  const generatePieChartData = (questionData) => {
+    const data = [["Answer", "Count"]];
+    questionData.options.forEach(option => {
+      data.push([option.answer, option.count]);
+    });
+    return data;
   };
 
   return (
     <div className="App">
-      <h1>Feedbacks</h1>
-      <ul>
+      <h1>{courseSessionName}</h1>
+      <ListGroup numbered>
+        <h3>Comentarios: </h3>
         {comments.map((comment, index) => (
-          <li key={index}>{comment}</li>
+          <ListGroup.Item key={index}>{comment}</ListGroup.Item>
         ))}
-      </ul>
-      <p>Média de nota: {generalNotesAverage} </p>
-      <div style={{ display: 'grid', gridTemplateColumns: '900px 800px', gap: '10px' }}>
-        {pieChartData.map((chartData, index) => (
-          <PieChart
-            key={index}
-            series={[
-              {
-                data: chartData.data,
-                cx: 130,
-                arcLabel: "value",
-                highlightScope: { faded: 'global', highlighted: 'item' },
-                faded: { innerRadius: 30, additionalRadius: -10, color: 'gray' },
-              },
-            ]}
-            width={900}
-            height={230}
+      </ListGroup>
+      <hr />
+      <h3> Média de nota: {generalNotesAverage}</h3>
+      <hr />
+      {questionAnswerCounts.map((questionData, index) => (
+        <div key={index}>
+          <Chart
+            chartType="PieChart"
+            data={generatePieChartData(questionData)}
+            options={{ title: questionData.question }}
+            width={"100%"}
+            height={"400px"}
           />
-        ))}
-      </div>
+        </div>
+      ))}
       <div className="return">
         <button type="button" onClick={handleBackButton} style={{ marginTop: '20px' }}>Voltar</button>
       </div>
     </div>
   );
 }
-

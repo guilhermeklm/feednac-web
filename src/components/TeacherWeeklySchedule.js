@@ -46,7 +46,8 @@ export default function TeacherWeeklySchedule({ teacherId }) {
                     }}
                     state={{
                       teacherId: teacherId,
-                      courseSessionId: dailySchedule.courseSession.id
+                      courseSessionId: dailySchedule.courseSession.id,
+                      courseSessionName: dailySchedule.courseSession.subjectName
                     }}
                   >
                     <button className="avaliacao-btn">Ver avaliações</button>
