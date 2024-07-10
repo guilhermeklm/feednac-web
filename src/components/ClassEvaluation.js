@@ -11,6 +11,7 @@ export default function ClassEvaluation() {
   const [answers, setAnswers] = useState({});
   const [generalNote, setGeneralNote] = useState('');
   const [additionalComment, setAdditionalComment] = useState('');
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -32,6 +33,16 @@ export default function ClassEvaluation() {
       questionId: parseInt(questionId),
       optionId: answers[questionId],
     }));
+
+    if(questionsAnswered.length < 5 ) {
+      setError({message: "Todas as perguntas devem ser respondidas"})
+      return
+    }
+
+    if(additionalComment === "" || generalNote === "") {
+      setError({message: "Todas as perguntas devem ser respondidas"})
+      return
+    }
 
     const feedbackData = {
       studentId,
@@ -99,7 +110,6 @@ export default function ClassEvaluation() {
             min="0"
             max="10"
             onChange={(e) => setGeneralNote(e.target.value)}
-            required
           />
           <label htmlFor="additionalComment">Comentário Adicional:</label>
           <textarea
@@ -107,9 +117,9 @@ export default function ClassEvaluation() {
             value={additionalComment}
             onChange={(e) => setAdditionalComment(e.target.value)}
             rows="4"
-            required
           />
         </div>
+        {error != null && <p className="error-message">{error.message}</p>}
         <div className="submit">
           <button type="submit">Enviar Avaliação</button><></>
         </div>
