@@ -1,12 +1,10 @@
 /* Estilizando o container da aplicação */
-.App {
+.App-teacher-feedback {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
     max-width: 2200px;
     margin: 0 auto;
-    background-color: #f8f9fa;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   /* Estilizando o título */
@@ -35,7 +33,7 @@
   
   /* Estilizando a média de notas */
   p {
-    text-align: center;
+    /* text-align: center; */
     font-size: 1.2rem;
     color: #495057;
     margin-top: 20px;

@@ -1,48 +1,82 @@
 /* Estilizando o container da imagem */
-.container {
-    text-align: center;
+.container-teacher-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 155px;
+  margin: 28%;
+  gap: 15px;
 }
-  .vazio {
-    height: 230px; /* Altura da tela inteira */
-  }
   
-  .professor-login {
+.professor-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilizando a imagem */
+.banner-img {
+  max-width: 100%; /* Garante que a imagem não ultrapasse a largura do container */
+  max-height: 100%; /* Garante que a imagem não ultrapasse a altura do container */
+  height: auto;
+  width: auto;
+}
+
+.img-bottom-right {
+  position: fixed; /* Posição fixa em relação à tela */
+  bottom: 0; /* Distância do lado inferior da tela */
+  right: 0; /* Distância do lado direito da tela */
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px; /* Espaçamento opcional para evitar sobreposição com a borda */
+  margin-right: 20px; /* Espaçamento opcional para evitar sobreposição com a borda */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Espaço entre os botões */
+}
+
+.button-space {
+  margin-top: 10px; /* Adiciona espaço vertical entre os botões */
+}
+
+@media (max-width: 600px) {
+  .container-teacher-login {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    max-width: 100%;
-    height: auto;
+    height: 155px;
+    margin-top: 70%;
+    gap: 15px;
   }
-  
-  /* Estilizando a imagem */
-  .banner-img {
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do container */
-    max-height: 100%; /* Garante que a imagem não ultrapasse a altura do container */
-    height: auto;
-    width: auto;
-  }
-  
-  .img-bottom-right {
-    position: fixed; /* Posição fixa em relação à tela */
-    bottom: 0; /* Distância do lado inferior da tela */
-    right: 0; /* Distância do lado direito da tela */
-    margin-bottom: 20px; /* Espaçamento opcional para evitar sobreposição com a borda */
-    margin-right: 20px; /* Espaçamento opcional para evitar sobreposição com a borda */
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Estilizando o corpo da página */
-  body {
-    margin: 0; /* Remove margens padrão do corpo da página */
-  }
+}
 
-  .button-container {
+@media (max-width: 1080px) {
+  .container-teacher-login {
     display: flex;
-    justify-content: space-between;
-    gap: 10px; /* Espaço entre os botões */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 155px;
+    margin-top: 35%;
+    gap: 15px;
   }
-  
-  .button-space {
-    margin-top: 10px; /* Adiciona espaço vertical entre os botões */
+}
+
+@media (max-width: 1440px) {
+  .container-teacher-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 155px;
+    margin-top: 28%;
+    gap: 15px;
   }
+}

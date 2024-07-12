@@ -20,20 +20,19 @@ const styles = {
 function Home() {
   return (
     <>
-      <div className="vazio"></div>
-      <div className="container">
+      <div className="container-home">
         <img src="/FeedNac.png" className="banner-img" alt="Imagem feednac" />
-      </div>
-      <div style={styles.buttonContainer}>
-        <Link to={`teacher`}>
-          <Button style={styles.button} variant="dark"> Sou professor </Button>
-        </Link>
-        <Link to={`student`}>
-          <Button style={styles.button} variant="dark"> Sou aluno </Button>
-        </Link>
-      </div>
-      <div className='img-bottom-right'>
-        <Image src="senac_logo_new.png" />
+        <div style={styles.buttonContainer}>
+          <Link to={`teacher`}>
+            <Button style={styles.button} variant="dark"> Sou professor </Button>
+          </Link>
+          <Link to={`student`}>
+            <Button style={styles.button} variant="dark"> Sou aluno </Button>
+          </Link>
+        </div>
+        <div className='img-bottom-right'>
+          <Image src="senac_logo_new.png" />
+        </div>
       </div>
     </>
   );

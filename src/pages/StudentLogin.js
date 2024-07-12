@@ -41,34 +41,32 @@ export default class StudentLogin extends Component {
 
     return (
       <>
-        <div className="vazio"></div>
-        <div className="container">
+        <div className="container-student-login">
           <img src="/FeedNac.png" className="banner-img" alt="Imagem feednac" />
-        </div>
-        <div className="student-login-input">
-          <Form method="POST" onSubmit={(e) => this.handleSubmit(e)} className="professor-login">
-            <Form.Group as={Row} className="mb-3">
-              <Form.Label id="matricula" column sm="3">
-                Matrícula
-              </Form.Label>
-              <Col sm="9">
-                <Form.Control type="text" placeholder="Matricula" />
-              </Col>
-            </Form.Group>
-            {this.state.error != null && <p className="error-message">{this.state.error.response.data.messages}</p>}
+          <div className="student-login-input">
+            <Form method="POST" onSubmit={(e) => this.handleSubmit(e)} className="professor-login">
+              <Form.Group as={Row} className="mb-3">
+                <Form.Label id="matricula" column sm="3">
+                  Matrícula
+                </Form.Label>
+                <Col sm="9">
+                  <Form.Control type="text" placeholder="Matricula" />
+                </Col>
+              </Form.Group>
+              {this.state.error != null && <p className="error-message">{this.state.error.response.data.messages}</p>}
 
-            <div className="button-container">
-              <Button variant="dark" onClick={this.handleBackButton}>Voltar</Button>
-              <Button variant="dark" type="submit">Login</Button>
-              
-            </div>
-          </Form>
-          {this.state.user && <Navigate to={`/student/${this.state.user.id}`} state={{ user: this.state.user }} />}
-        </div>
-        <div className="img-bottom-right">
-          <a href="/">
-            <Image src="senac_logo_new.png" />
-          </a>
+              <div className="button-container-student-login">
+                <Button variant="dark" onClick={this.handleBackButton}>Voltar</Button>
+                <Button variant="dark" type="submit">Login</Button>
+              </div>
+            </Form>
+            {this.state.user && <Navigate to={`/student/${this.state.user.id}`} state={{ user: this.state.user }} />}
+          </div>
+          <div className="img-bottom-right">
+            <a href="/">
+              <Image src="senac_logo_new.png" />
+            </a>
+          </div>
         </div>
       </>
     );

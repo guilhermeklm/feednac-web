@@ -1,10 +1,10 @@
-.container-student-home {
+.container-teacher-home {
   display: flex;
   height: 95vh;
   gap: 30px;
 }
 
-.barra-lateral-student {
+.barra-lateral {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,11 +15,11 @@
   box-shadow: 0px 2px 6px #bebcbc;
 }
 
-.botao-logoff-student {
+.botao-logoff {
   margin: 34%;
 }
 
-.image-student {
+.image {
   border-radius: 50%;
   border: 1.5px solid #adadad;
   width: 150px;
@@ -28,26 +28,26 @@
   margin: 17% 17% 17% 27%;
 }
 
-.infos-student {
+.infos {
   margin: 0px 0px 0px 30px;
   text-align: left;
 }
 
-.container-cronograma-student {
+.container-cronograma {
   display: flex;
   flex-direction: column;
   margin: 10% 10% 10% 10%;
 }
 
 @media (max-width: 600px) {
-  .container-student-home {
+  .container-teacher-home {
     display: flex;
     flex-direction: column;
     height: 95vh;
     gap: 30px;
   }
 
-  .barra-lateral-student {
+  .barra-lateral {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -57,23 +57,23 @@
     border-radius: 14px;
   }
 
-  .botao-logoff-student {
+  .botao-logoff {
     margin: 2%;
   }
 
-  .image-student {
+  .image {
     display: none;
   }
 }
 
 @media (max-width: 1000px) {
-  .container-student-home {
+  .container-teacher-home {
     display: flex;
     height: 95vh;
     gap: 30px;
   }
 
-  .barra-lateral-student {
+  .barra-lateral {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -83,23 +83,23 @@
     border-radius: 14px;
   }
 
-  .botao-logoff-student {
+  .botao-logoff {
     margin: 2%;
   }
 
-  .image-student {
+  .image {
     display: none;
   }
 }
 
 @media (max-width: 1024px) {
-  .container-student-home {
+  .container-teacher-home {
     display: flex;
     height: 95vh;
     gap: 30px;
   }
 
-  .barra-lateral-student {
+  .barra-lateral {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -110,11 +110,11 @@
     box-shadow: 0px 2px 6px #bebcbc;
   }
 
-  .botao-logoff-student {
+  .botao-logoff {
     margin: 2%;
   }
 
-  .image-student {
+  .image {
     border-radius: 50%;
     border: 1.5px solid #adadad;
     width: 150px;
@@ -123,7 +123,7 @@
     margin: 17% 17% 17% 17%;
   }
 
-  .infos-student {
+  .infos {
     margin: 0px 0px 0px 30px;
     text-align: left;
   }

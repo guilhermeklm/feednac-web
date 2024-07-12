@@ -41,41 +41,40 @@ export default class TeacherLogin extends Component {
   render() {
     return (
       <>
-        <div className="vazio"></div>
-        <div className="container">
+        <div className="container-teacher-login">
           <img src="/FeedNac.png" className="banner-img" alt="Imagem feednac" />
-        </div>
-        <Form method="POST" onSubmit={(e) => this.handleSubmit(e)} className="professor-login">
-          <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-            <Form.Label column sm="3">
-              Username
-            </Form.Label>
-            <Col sm="9">
-              <Form.Control type="text" placeholder="Username" />
-            </Col>
-          </Form.Group>
+          <Form method="POST" onSubmit={(e) => this.handleSubmit(e)} className="professor-login">
+            <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+              <Form.Label column sm="3">
+                Username
+              </Form.Label>
+              <Col sm="9">
+                <Form.Control type="text" placeholder="Username" />
+              </Col>
+            </Form.Group>
 
-          <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-            <Form.Label column sm="3">
-              Password
-            </Form.Label>
-            <Col sm="9">
-              <Form.Control type="password" placeholder="Password" />
-            </Col>
-          </Form.Group>
-          {this.state.error != null && <p className="error-message">{this.state.error.response.data.messages}</p>}
-          <div className="button-container">
-            <Button variant="dark" href="/">Voltar</Button>
-            <Button variant="dark" type="submit">Login</Button>
-          </div>
-          <div>
-          <a>
+            <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+              <Form.Label column sm="3">
+                Password
+              </Form.Label>
+              <Col sm="9">
+                <Form.Control type="password" placeholder="Password" />
+              </Col>
+            </Form.Group>
+            {this.state.error != null && <p className="error-message">{this.state.error.response.data.messages}</p>}
+            <div className="button-container">
+              <Button variant="dark" href="/">Voltar</Button>
+              <Button variant="dark" type="submit">Login</Button>
+            </div>
+
+          </Form>
+        </div>
+        {this.state.user && <Navigate to={`/teacher/${this.state.user.id}`} state={{ user: this.state.user }} />}
+        <div>
+          <a href='/' className='img-bottom-right'>
             <Image src="senac_logo_new.png" />
           </a>
         </div>
-        </Form>
-        {this.state.user && <Navigate to={`/teacher/${this.state.user.id}`} state={{ user: this.state.user }} />}
-       
       </>
     );
   }

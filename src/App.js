@@ -10,7 +10,7 @@ import TeacherFeedback from "./pages/TeacherFeedback";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/student" element={<StudentLogin />} />

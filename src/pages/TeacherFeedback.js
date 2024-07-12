@@ -84,7 +84,7 @@ export default function TeacherFeedback() {
   };
 
   return (
-    <div className="App">
+    <div className="App-teacher-feedback">
       <h1>{courseSessionName}</h1>
       {comments.length > 0 ? (
         <ListGroup numbered>

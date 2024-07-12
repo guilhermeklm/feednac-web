@@ -1,13 +1,12 @@
 /* Estilizando o container da imagem */
-.container {
+.container-student-login {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 155px; /* Altura da tela inteira */
-}
-
-.vazio {
-  height: 230px; /* Altura da tela inteira */
+  height: 155px;
+  margin: 28%;
+  gap: 15px;
 }
 
 .error-message {
@@ -42,12 +41,7 @@
   height: auto;
 }
 
-/* Estilizando o corpo da página */
-body {
-  margin: 0; /* Remove margens padrão do corpo da página */
-}
-
-.button-container {
+.button-container-student-login {
   display: flex;
   justify-content: space-between;
   gap: 10px; /* Espaço entre os botões */
@@ -55,4 +49,40 @@ body {
 
 .button-space {
   margin-top: 10px; /* Adiciona espaço vertical entre os botões */
+}
+
+@media (max-width: 600px) {
+  .container-student-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 155px;
+    margin-top: 70%;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .container-student-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 155px;
+    margin-top: 35%;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .container-student-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 155px;
+    margin-top: 28%;
+    gap: 15px;
+  }
 }
